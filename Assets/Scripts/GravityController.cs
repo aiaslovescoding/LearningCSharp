@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
 using System.Linq;
-
-public class GravityController : MonoBehaviour
+using UnityEngine.EventSystems;
+public class GravityController : MonoBehaviour, ICustomMessageTarget
 {
+    public bool won = false;
+    GoalCode goalCode;
+
     public GameObject[] bodies;
     public GameObject bodies2;
 
@@ -38,11 +41,22 @@ public class GravityController : MonoBehaviour
             Vector3 acceleration = totalForce/planet.mass;
             planet.velocity += acceleration * timeScale * Time.deltaTime;
             planet.transform.position += planet.velocity * timeScale * Time.deltaTime;
-            Debug.Log(otherPlanets);
-            Debug.Log(body);
-            Debug.Log(totalForce);
-
-
         }
+        if (Input.GetKeyDown("e") & timeScale < 10)
+        {
+             timeScale += 1;
+        }
+        if (Input.GetKeyDown("q") & timeScale > 1)
+        {
+            timeScale += -1;
+        }
+    }
+        public void Message1()
+    {
+        Debug.Log ("Message 1 received");
+    }
+    public void Message2()
+    {
+        Debug.Log ("Message 2 received");
     }
 }
