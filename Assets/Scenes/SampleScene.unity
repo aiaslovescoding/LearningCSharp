@@ -341,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationVelocity: 0
   rotation: 90
-  force: 20
+  force: 5
   rotationAcceleration: 90
   time: 61.5
 --- !u!96 &122220674
@@ -515,7 +515,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221305725}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -524,7 +524,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221305727
@@ -539,6 +539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998f708ef60866f4697a267c79691fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &221305728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,7 +549,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221305725}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -610,7 +613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306022735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1688128023}
@@ -682,7 +685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 100
   title: 
-  velocity: {x: 0, y: -0.5167, z: 0}
+  velocity: {x: 0, y: -0.4219, z: 0}
   speed: 0
 --- !u!96 &306022739
 TrailRenderer:
@@ -5967,7 +5970,7 @@ GameObject:
   - component: {fileID: 1688128025}
   - component: {fileID: 1688128027}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: GoalRange
   m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6066,6 +6069,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30751d8fc19cc04f8cb4ec432efd48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 221305727}
+        m_TargetAssemblyTypeName: WinningCode, NewAssembly
+        m_MethodName: WeWon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   timer: 0
 --- !u!114 &1688128027
 MonoBehaviour:
@@ -6076,6 +6094,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1688128022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558851dde1a9c9f44a5dac3c96175e94, type: 3}
+  m_Script: {fileID: 11500000, guid: d30751d8fc19cc04f8cb4ec432efd48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  timer: 0

@@ -85,8 +85,8 @@ public class RocketController : MonoBehaviour
         if (other.gameObject.tag == "Respawn")
         {
         PlanetProperties planetProperties = GetComponent<PlanetProperties>();
-        this.transform.position = new Vector3 (0, 4, 0);
-        planetProperties.velocity = new Vector3 ( 0.4085f, 0, 0);
+        this.transform.position = new Vector3 (0, 2, 0);
+        planetProperties.velocity = new Vector3 (0.5777f, 0, 0);
         }
     }
 }
